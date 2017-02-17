@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wsid">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.css">
+  <!--<link rel="stylesheet" href="./styles/style.css">-->
+  <link rel="stylesheet" href="./dist/bundle.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body ng-controller="menuCtrl">
+  <!--MENU -->
+  <section>
+    <nav id="menu">
+      <!--<a ui-sref='home'>Home</a>
+      <a ui-sref='challenge'>Challenge</a>
+      <a ui-sref='challengeWinner'>ChallengeWinner</a>
+      <a ui-sref='congrats'>Congrats</a> <br>-->
+      <br>
+      <br>
+      <input type='text' ng-model="player" placeholder="Player name">
+      <button class='btn btn-danger'ng-click="addPlayer(player)">Add</button>
+      <h5 style='color:white'>Players:</h5>
+      <div ng-repeat='player in players'>
+        <ul>
+          <li style='color:white'>{{player}}</li>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <input type='text' ng-model="drink" placeholder="Enter your drink">
+      <button class='btn btn-danger' ng-click="addDrink(drink)" type="submit">Add</button>
+      <h5>
+        <font color='white'>Alcoholic Beverages:</font>
+      </h5>
+      <div ng-repeat="drink in drinks">
+        <ul>
+          <li>
+            <font color='white'>{{drink}}</font>
+          </li>
+        </ul>
+      </div>
+      <!--ng repeat on click remove item from array.-->
+    </nav>
+  </section>
+  <!--CONTENT-->
+  <ui-view></ui-view>
+  <section>
+    <main id="panel">
+      <button class="toggle-button">
+        <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
+      </button>
+
+    </main>
+    <header>
+      <img src="wsid.png" alt="logo" />
+    </header>
+    <div class="wallpaper"> </div>
+    <div id="container" class="centered">
+      <canvas id="drawing_canvas"></canvas>
+
+      <div id="status_label">loading...</div>
+    </div>
+    </main>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/p2.js/0.6.0/p2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/sweetalert2/6.4.2/sweetalert2.min.js"></script>
+    <!--<script src="./dist/bundle.js"></script>-->
+    <script src="js/app.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/challengeCtrl.js"></script>
+    <script src="js/challengeWinnerCtrl.js"></script>
+    <script src="js/congratsCtrl.js"></script>
+    <script src="js/alcoholCtrl.js"></script>
+    <script src="js/mainService.js"></script>
+    <script src="js/menuCtrl.js"></script>
+    <script src="js/wheel.js"></script>
+</body>
+
+</html>
