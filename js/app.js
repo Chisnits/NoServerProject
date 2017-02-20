@@ -1,4 +1,4 @@
-angular.module('wsid', ['ui.router']).config(function($stateProvider,$urlRouterProvider){
+angular.module('wsid', ['ui.router','ngMaterial']).config(function($stateProvider,$urlRouterProvider){
     
     $urlRouterProvider.when('', '/');
 

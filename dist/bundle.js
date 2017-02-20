@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('wsid', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('wsid', ['ui.router', 'ngMaterial']).config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.when('', '/');
 
@@ -87,19 +87,6 @@ angular.module('wsid').controller('congratsCtrl', function ($scope) {});
 'use strict';
 
 angular.module('wsid').service('mainService', function ($http) {
-    // var baseUrl = "http://swapi.co/api";
-    // this.getData = function(character){
-    //     return $http({
-    //         method: 'GET',
-    //         url: baseUrl + '/people'
-    // }).then(function(response){
-    //     console.log(response.data.results)
-    //     if(response.status === 200){
-    //         return response.data.results
-    //     }
-    //         return "Something Went Wrong"
-    //     })
-    // }
     this.getBeer = function () {
         return $http.get('../alcohols/beer.json');
     };
@@ -134,7 +121,7 @@ document.querySelector('.toggle-button').addEventListener('click', function () {
 });
 'use strict';
 
-angular.module('wsid').controller('menuCtrl', function ($scope) {
+angular.module('wsid').controller('menuCtrl', function ($scope, $state) {
     $scope.drinks = [];
     $scope.players = [];
     $scope.addPlayer = function (player) {
@@ -158,10 +145,29 @@ angular.module('wsid').controller('menuCtrl', function ($scope) {
         var remove = $scope.players.indexOf(drink);
         $scope.drinks.splice(remove, 1);
     };
+
+    $scope.goHome = function () {
+        $state.go('home');
+    };
+
+    $scope.goSpin = function () {
+        $state.go('wheel');
+    };
 });
 'use strict';
 
 angular.module('wsid').controller('wheelCtrl', function () {
+
+    function init() {
+        initDrawingCanvas();
+        initPhysics();
+
+        requestAnimationFrame(loop);
+
+        statusLabel.innerHTML = 'Go ahead and spin!';
+    };
+
+    this.$onInit = init;
 
     var TWO_PI = Math.PI * 2;
     var HALF_PI = Math.PI * 0.5;
@@ -195,14 +201,7 @@ angular.module('wsid').controller('wheelCtrl', function () {
 
     var statusLabel = document.getElementById('status_label');
 
-    window.onload = function () {
-        initDrawingCanvas();
-        initPhysics();
-
-        requestAnimationFrame(loop);
-
-        statusLabel.innerHTML = 'Go ahead and spin!';
-    };
+    window.onload = init;
 
     function initDrawingCanvas() {
         drawingCanvas.width = viewWidth;

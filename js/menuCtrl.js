@@ -1,4 +1,4 @@
-angular.module('wsid').controller('menuCtrl',function($scope){
+angular.module('wsid').controller('menuCtrl',function($scope,$state){
     $scope.drinks = [];
     $scope.players = [];
     $scope.addPlayer = function(player){
@@ -21,6 +21,14 @@ angular.module('wsid').controller('menuCtrl',function($scope){
     $scope.removeDrink = function(drink){
         var remove = $scope.players.indexOf(drink);
         $scope.drinks.splice(remove, 1);
+    }
+
+    $scope.goHome = function(){
+        $state.go('home')
+    }
+
+    $scope.goSpin = function(){
+        $state.go('wheel')
     }
 
 

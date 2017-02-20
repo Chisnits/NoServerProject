@@ -1,5 +1,16 @@
 angular.module('wsid').controller('wheelCtrl', function() {
 
+function init() {
+    initDrawingCanvas();
+    initPhysics();
+
+    requestAnimationFrame(loop);
+
+    statusLabel.innerHTML = 'Go ahead and spin!';
+};
+
+this.$onInit = init;
+
 const TWO_PI = Math.PI * 2;
 const HALF_PI = Math.PI * 0.5;
 // canvas settings
@@ -36,14 +47,7 @@ var particles = [];
 
 var statusLabel = document.getElementById('status_label');
 
-window.onload = function() {
-    initDrawingCanvas();
-    initPhysics();
-
-    requestAnimationFrame(loop);
-
-    statusLabel.innerHTML = 'Go ahead and spin!';
-};
+window.onload = init;
 
 function initDrawingCanvas() {
     drawingCanvas.width = viewWidth;
