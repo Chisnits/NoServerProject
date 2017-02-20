@@ -1,0 +1,54 @@
+<!--Add a filter here to only display whatever you put in the input-->
+<section class="challenge-section">
+    <input type: 'text' ng-model='test' style="margin: 20px auto; ">
+    <h1 style='color:white;'>Brews</h1>
+    <div class='brews' ng-repeat="brews in beer | filter: test"  style="color: white; background-color:transparent;">
+        <p>{{brews.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(brews.name)" style="display: inline;">Add to list</button></p>
+    </div>
+
+    <br>
+    <br>
+    
+    <h1 style='color:white;'>Gins</h1>
+    <div ng-repeat="gins in gin | filter: test" style="color: white; background-color:transparent;">
+        <p>{{gins.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(gins.name)" style="display: inline;">Add to list</button></p>
+    </div>
+    
+    <br>
+    <br>
+    
+    <h1 style='color:white;'>Rums</h1>
+    <div ng-repeat="rums in rum | filter: test" style="color: white; background-color:transparent;">
+               <p>{{rums.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(rums.name)" style="display: inline;">Add to list</button></p>
+
+    </div>
+    
+    <br>
+    <br>
+    
+    <h1 style='color:white;'>Tequilas</h1>
+    <div ng-repeat="tequilas in tequila | filter: test" style="color: white; background-color:transparent;">
+                   <p>{{tequilas.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(tequilas.name)" style="display: inline;">Add to list</button></p>
+
+    </div>
+    
+    <br>
+    <br>
+    
+    <h1 style='color:white;'>Vodkas</h1>
+    <div ng-repeat="vodkas in vodka | filter: test" style="color: white; background-color:transparent;">
+                    <p>{{vodkas.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(vodkas.name)" style="display: inline;">Add to list</button></p>
+
+    </div>
+    
+    <br>
+    <br>
+    
+    <h1 style='color:white;'>Whiskeys</h1>
+    <div ng-repeat="whiskeys in whiskey | filter: test" style="color: white; background-color:transparent;">
+        <ul>
+                    <p>{{whiskeys.name}} -- <button class="btn btn-danger btn-xs" ng-click="addDrink(whiskeys.name)" style="display: inline;">Add to list</button></p>
+
+        </ul>
+    </div>
+</section>

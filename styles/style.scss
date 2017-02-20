@@ -1,10 +1,10 @@
 
-  body {
+body {
     background: url(".././bar.jpg") no-repeat;
     background-size: cover;
     width: 100vw;
     height:100vh; 
-  }
+}
 header {
   height: 100px;
   width: 100%;
@@ -34,7 +34,8 @@ body {
 }
 
 .slideout-menu {
-  /*background-color: white;*/
+  background-color: black;
+  opacity: 0.8;
   position: fixed;
   left: 0;
   top: 0;
@@ -101,3 +102,20 @@ body {
     position: absolute;
 }
 /*Wheel*/
+
+.drinksContainer {
+  display: flex;
+  align-items: center;
+}
+
+
+.challenge-section {
+  width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: black;
+  opacity: 0.8;
+}
+.menu-links {
+  text-decoration: none;
+}

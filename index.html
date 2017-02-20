@@ -17,39 +17,43 @@
   <section>
     <nav id="menu">
       <!--<a ui-sref='home'>Home</a>
-      <a ui-sref='challenge'>Challenge</a>
+      
       <a ui-sref='challengeWinner'>ChallengeWinner</a>
       <a ui-sref='congrats'>Congrats</a> <br>-->
+      <button class='btn btn-danger btn-lg menu-links' ui-sref="home">Home</button>
+      <button class='btn btn-danger btn-lg menu-links' ui-sref="wheel">Spin!</button>
       <br>
       <br>
-      <input type='text' ng-model="player" placeholder="Player name">
-      <button class='btn btn-danger'ng-click="addPlayer(player)">Add</button>
-      <h5 style='color:white'>Players:</h5>
+
+      <input type='text' ng-model="addplayer" placeholder="Player name">
+      <button class='btn btn-danger'ng-click="addPlayer(addplayer)">Add</button>
+      <h5 style='color:white' >Players:</h5>
       <div ng-repeat='player in players'>
-        <ul>
-          <li style='color:white'>{{player}}</li>
-        </ul>
+        <ol>
+          <li style='color:white'>{{player}}   --     <button class="btn btn-info btn-xs" ng-click="removePlayer(player)"> Remove</button></li>
+        </ol>
       </div>
+
       <br>
       <br>
+      
       <input type='text' ng-model="drink" placeholder="Enter your drink">
       <button class='btn btn-danger' ng-click="addDrink(drink)" type="submit">Add</button>
-      <h5>
-        <font color='white'>Alcoholic Beverages:</font>
-      </h5>
+      <h5 style='color:white'> Alcoholic Beverages:</h5>
       <div ng-repeat="drink in drinks">
         <ul>
-          <li>
-            <font color='white'>{{drink}}</font>
-          </li>
+          <li style='color:white'>{{drink}}   --     <button class="btn btn-info btn-xs" ng-click="removeDrink(drink)"> Remove</button> </li>
         </ul>
       </div>
       <!--ng repeat on click remove item from array.-->
     </nav>
   </section>
   <!--CONTENT-->
-  <ui-view></ui-view>
+
+  
+  
   <section>
+    
     <main id="panel">
       <button class="toggle-button">
         <i class="fa fa-bars fa-4x" aria-hidden="true"></i>
@@ -57,15 +61,13 @@
 
     </main>
     <header>
-      <img src="wsid.png" alt="logo" />
+      <img class='logo' src="wsid.png" alt="logo" />
     </header>
     <div class="wallpaper"> </div>
-    <div id="container" class="centered">
-      <canvas id="drawing_canvas"></canvas>
+    
 
-      <div id="status_label">loading...</div>
-    </div>
-    </main>
+    <ui-view></ui-view>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
@@ -77,7 +79,7 @@
     <!--<script src="./dist/bundle.js"></script>-->
     <script src="js/app.js"></script>
     <script src="js/menu.js"></script>
-    <script src="js/challengeCtrl.js"></script>
+    <!--/*<script src="js/challengeCtrl.js"></script>*/-->
     <script src="js/challengeWinnerCtrl.js"></script>
     <script src="js/congratsCtrl.js"></script>
     <script src="js/alcoholCtrl.js"></script>

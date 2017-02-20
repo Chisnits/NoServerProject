@@ -45,6 +45,12 @@ $scope.getWhiskey = function() {
     $scope.getWhiskey();
 
 
+     $scope.addDrink = function(drink){
+        $scope.drinks.push(drink);
+        console.log($scope.drinks);
+        sweetAlert('Congratulations!', 'You added a Drink!', 'success');
+        return $scope.drinks;
+    };
 
    
 });

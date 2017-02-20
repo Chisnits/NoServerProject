@@ -3,25 +3,25 @@ angular.module('wsid', ['ui.router']).config(function($stateProvider,$urlRouterP
     $urlRouterProvider.when('', '/');
 
     $stateProvider
-        .state('home', {
+        .state('home',{
             url: '/',
-            templateUrl: './views/home.html',
+            templateUrl: './views/drinks.html',
             controller: 'alcoholCtrl'
         })
-        .state('challenge',{
-            url: '/challenge',
-            templateUrl: '../views/challenge.html',
-            controller: 'challengeCtrl'
+        .state('wheel', {
+            url: '/wheel',
+            templateUrl: './views/wheel.html',
+            controller: 'wheelCtrl'
         })
-        .state('challengeWinner',{
-            url: '/challengeWinner',
-            templateUrl: '../views/challengeWinner.html'
-        })
-        .state('congrats',{
-            url: '/congrats',
-            templateUrl: '../views/congrats.html',
-            controller: 'congratsCtrl'
-        })
+        // .state('challengeWinner',{
+        //     url: '/challengeWinner',
+        //     templateUrl: '../views/challengeWinner.html'
+        // })
+        // .state('congrats',{
+        //     url: '/congrats',
+        //     templateUrl: '../views/congrats.html',
+        //     controller: 'congratsCtrl'
+        // })
        
         
 });
