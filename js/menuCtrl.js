@@ -19,7 +19,7 @@ angular.module('wsid').controller('menuCtrl',function($scope,$state){
     };
 
     $scope.removeDrink = function(drink){
-        var remove = $scope.players.indexOf(drink);
+        var remove = $scope.drinks.indexOf(drink);
         $scope.drinks.splice(remove, 1);
     }
 

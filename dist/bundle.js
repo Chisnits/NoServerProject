@@ -83,9 +83,6 @@ angular.module('wsid').controller('alcoholCtrl', function ($scope, mainService) 
 angular.module('wsid').controller('challengeWinnerCtrl', function ($scope) {});
 'use strict';
 
-angular.module('wsid').controller('congratsCtrl', function ($scope) {});
-'use strict';
-
 angular.module('wsid').service('mainService', function ($http) {
     this.getBeer = function () {
         return $http.get('../alcohols/beer.json');
@@ -142,7 +139,7 @@ angular.module('wsid').controller('menuCtrl', function ($scope, $state) {
     };
 
     $scope.removeDrink = function (drink) {
-        var remove = $scope.players.indexOf(drink);
+        var remove = $scope.drinks.indexOf(drink);
         $scope.drinks.splice(remove, 1);
     };
 
