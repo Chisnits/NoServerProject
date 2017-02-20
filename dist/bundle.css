@@ -93,11 +93,13 @@ body {
   align-items: center; }
 
 .challenge-section {
+  height: 655px;
   width: 700px;
   margin: 0 auto;
   text-align: center;
   background-color: black;
-  opacity: 0.8; }
+  opacity: 0.8;
+  overflow: scroll; }
 
 .menu-links {
   text-decoration: none; }

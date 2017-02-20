@@ -13,15 +13,6 @@ angular.module('wsid', ['ui.router']).config(function($stateProvider,$urlRouterP
             templateUrl: './views/wheel.html',
             controller: 'wheelCtrl'
         })
-        // .state('challengeWinner',{
-        //     url: '/challengeWinner',
-        //     templateUrl: '../views/challengeWinner.html'
-        // })
-        // .state('congrats',{
-        //     url: '/congrats',
-        //     templateUrl: '../views/congrats.html',
-        //     controller: 'congratsCtrl'
-        // })
        
         
 });

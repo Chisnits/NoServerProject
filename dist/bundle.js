@@ -13,16 +13,6 @@ angular.module('wsid', ['ui.router']).config(function ($stateProvider, $urlRoute
         templateUrl: './views/wheel.html',
         controller: 'wheelCtrl'
     });
-    // .state('challengeWinner',{
-    //     url: '/challengeWinner',
-    //     templateUrl: '../views/challengeWinner.html'
-    // })
-    // .state('congrats',{
-    //     url: '/congrats',
-    //     templateUrl: '../views/congrats.html',
-    //     controller: 'congratsCtrl'
-    // })
-
 });
 'use strict';
 
@@ -78,9 +68,6 @@ angular.module('wsid').controller('alcoholCtrl', function ($scope, mainService) 
         return $scope.drinks;
     };
 });
-'use strict';
-
-angular.module('wsid').controller('challengeWinnerCtrl', function ($scope) {});
 'use strict';
 
 angular.module('wsid').controller('congratsCtrl', function ($scope) {});
@@ -163,6 +150,17 @@ angular.module('wsid').controller('menuCtrl', function ($scope) {
 
 angular.module('wsid').controller('wheelCtrl', function () {
 
+    function init() {
+        initDrawingCanvas();
+        initPhysics();
+
+        requestAnimationFrame(loop);
+
+        statusLabel.innerHTML = 'Go ahead and spin!';
+    };
+
+    this.$onInit = init;
+
     var TWO_PI = Math.PI * 2;
     var HALF_PI = Math.PI * 0.5;
     // canvas settings
@@ -195,14 +193,7 @@ angular.module('wsid').controller('wheelCtrl', function () {
 
     var statusLabel = document.getElementById('status_label');
 
-    window.onload = function () {
-        initDrawingCanvas();
-        initPhysics();
-
-        requestAnimationFrame(loop);
-
-        statusLabel.innerHTML = 'Go ahead and spin!';
-    };
+    window.onload = init;
 
     function initDrawingCanvas() {
         drawingCanvas.width = viewWidth;
